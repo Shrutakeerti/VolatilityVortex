@@ -113,7 +113,7 @@ Example:
 
 ### 📸 Preview
 
-![Dashboard Screenshot](screenshots\image.png)
+![Dashboard Screenshot](https://github.com/Shrutakeerti/VolatilityVortex/tree/main/screenshots)
 
 > UI styled using custom CSS with:
 > - `backdrop-filter` + `-webkit-backdrop-filter` for Safari support
