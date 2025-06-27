@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Algo Trading Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚀 Algo-Trading System</h1>
+
+      <section class="card">
+        <h2>📈 Trade Signals</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Date</th>
+              <th>Signal</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for sig in signals %}
+            <tr class="signal-row {{ sig[2]|lower }}">
+              <td>{{ sig[0] }}</td>
+              <td>{{ sig[1].date() }}</td>
+              <td>{{ sig[2] }}</td>
+              <td>{{ sig[3] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>🤖 ML Model Accuracy</h2>
+        <p class="accuracy">{{ acc }}</p>
+      </section>
+
+      <section class="card">
+        <h2>🧠 Groq Commentary</h2>
+        <p class="groq">{{ groq_output }}</p>
+      </section>
+    </div>
+  </body>
+</html>
