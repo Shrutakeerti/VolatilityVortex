@@ -31,9 +31,9 @@ def generate_signals(df): # gen buy sig
         close = row['Close']
 
         if not any(pd.isna([rsi, dma20, dma50, prev_dma20, prev_dma50])): # check for NaN
-            print(f"📊 {df.index[i].date()} | RSI: {rsi:.2f} | 20DMA: {dma20:.2f} | 50DMA: {dma50:.2f}")
+            print(f" {df.index[i].date()} | RSI: {rsi:.2f} | 20DMA: {dma20:.2f} | 50DMA: {dma50:.2f}")
           
-            if (rsi < 50) and (dma20 > dma50): # buy condition as mentioned in PS
+            if (rsi < 30) and (dma20 > dma50): # buy condition as mentioned in PS
                 signals.append((df.index[i], 'BUY', close))
 
     if not signals:
